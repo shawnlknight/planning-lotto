@@ -2513,6 +2513,9 @@ body {
 .name-section .last-btn-in-group {
   border-radius: 0 4px 4px 0 !important;
 }
+.voting-results {
+  padding: 0;
+}
 .voting-results .panel-heading > h4 {
   color: #f9f9f9;
 }
