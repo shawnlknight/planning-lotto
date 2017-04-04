@@ -2453,6 +2453,16 @@
   overflow: visible;
   clip: auto;
 }
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
 html {
   position: relative;
   min-height: 100%;
@@ -2472,7 +2482,7 @@ body {
 .panel-body,
 .label,
 .well {
-  color: #333;
+  color: #131313;
 }
 .well-style {
   background-color: rgba(214, 214, 214, 0.47);
