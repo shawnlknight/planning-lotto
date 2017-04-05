@@ -3,20 +3,12 @@
 @gray-background: rgba(214, 214, 214, 0.47);
 @footer-height: 35px;
 
-// Hide visually but available for screen reader
-.visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px; width: 1px;
-  margin: -1px; padding: 0; border: 0; 
-}
-
 html{
   	position: relative;
   	min-height: 100%;
 }
 body {
+  font-size: 18px;
 	font-family: 'Roboto', sans-serif;
 	background-color: @main-background;
 	margin-bottom: @footer-height;
@@ -32,6 +24,7 @@ body {
 .label,
 .well {
 	color: #131313;
+  font-weight: bold;
 }
 .well-style {
 	background-color: @gray-background;
@@ -179,4 +172,29 @@ body {
     .nav-leader-toggle-power{
     	margin-left: 20%;
     }
+}
+
+// Hide visually but available for screen reader
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.form-control {
+  font-size: 0.9em;
+}
+
+.font-size-md {
+  font-size: 0.9em;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
 }
