@@ -27,19 +27,19 @@
     <div class="col-sm-4">
       <div class="center-el">
         <div class="btn-group nav-leader-toggle-power">
-          <button class="btn btn-info" ng-model="leaderSelected" ng-hide="!params.leader && params.leaderChosen" ng-click="setLeader(data.name)" uib-btn-radio="'leader'" uncheckable>I'm the leader!</button>
-          <button class="btn btn-info" ng-model="leaderSelected" ng-hide="!params.leader && params.leaderChosen" ng-click="resetLeader()" uib-btn-radio="'giveUpPower'" uncheckable>Give up your power</button>
+          <button class="btn btn-info font-size-md" ng-model="leaderSelected" ng-hide="!params.leader && params.leaderChosen" ng-click="setLeader(data.name)" uib-btn-radio="'leader'" uncheckable>I'm the leader!</button>
+          <button class="btn btn-info font-size-md" ng-model="leaderSelected" ng-hide="!params.leader && params.leaderChosen" ng-click="resetLeader()" uib-btn-radio="'giveUpPower'" uncheckable>Give up your power</button>
         </div>
       </div>
     </div>
     <div class="col-sm-offset-3 col-sm-5">
       <div class="center-el">
         <div class="btn-group nav-people-list" uib-dropdown>
-          <button class="btn" ng-class="params.leader ? 'btn-success' : 'btn-info'" ng-click="addUser(data.name);">
+          <button class="btn font-size-md" ng-class="params.leader ? 'btn-success' : 'btn-info'" ng-click="addUser(data.name);">
             <i class="fa fa-refresh" aria-hidden="true"></i>
             <span class="visuallyhidden">Refresh game</span>
           </button>
-          <button type="button" class="btn" ng-class="params.leader ? 'btn-success' : 'btn-info'" uib-dropdown-toggle>
+          <button type="button" class="btn font-size-md" ng-class="params.leader ? 'btn-success' : 'btn-info'" uib-dropdown-toggle>
             <span ng-show="params.leader">Leader: </span>
             {{currentUsers.length}} People Estimating
             <span class="caret"></span>
@@ -77,16 +77,16 @@
         <div class="col-sm-offset-6 col-sm-6">
           <div class="center-el">
             <div class="btn-group scale-selector">
-              <button class="btn btn-default cursor-default" ng-model="params.scaleSelection" uib-btn-radio disabled>
+              <button class="btn btn-default cursor-default font-size-md" ng-model="params.scaleSelection" uib-btn-radio disabled>
                 Scale:
               </button>
-              <button class="btn btn-warning" ng-model="params.scaleSelection" uib-btn-radio="'default'" ng-click="changeCards(cards); showCustomScaleInput(false);">
+              <button class="btn btn-warning font-size-md" ng-model="params.scaleSelection" uib-btn-radio="'default'" ng-click="changeCards(cards); showCustomScaleInput(false);">
                 Default
               </button>
-              <button class="btn btn-warning" ng-model="params.scaleSelection" uib-btn-radio="'fibonacci'" ng-click="changeCards(fibonacci); showCustomScaleInput(false);">
+              <button class="btn btn-warning font-size-md" ng-model="params.scaleSelection" uib-btn-radio="'fibonacci'" ng-click="changeCards(fibonacci); showCustomScaleInput(false);">
                 Fibonacci
               </button>
-              <button class="btn btn-warning" ng-model="params.scaleSelection" uib-btn-radio="'custom'" ng-click="showCustomScaleInput(true);">
+              <button class="btn btn-warning font-size-md" ng-model="params.scaleSelection" uib-btn-radio="'custom'" ng-click="showCustomScaleInput(true);">
                 Custom
               </button>
             </div>
@@ -103,14 +103,14 @@
               <textarea rows="5" class="form-control the-text" ng-model="newtask" id="new-task"></textarea>
             </div>
             <div class="btn-group">
-              <button class="btn btn-info" ng-click="changeTask(newtask); deleteCards(); toggle(true);" ng-disabled="newtask == null">
+              <button class="btn btn-info font-size-md" ng-click="changeTask(newtask); deleteCards(); toggle(true);" ng-disabled="newtask == null">
                 Present Task
               </button>
-              <button class="btn btn-warning" ng-click="deleteCards(); toggle(true); newtask = null; params.currentTask = 'None';">
+              <button class="btn btn-warning font-size-md" ng-click="deleteCards(); toggle(true); newtask = null; params.currentTask = 'None';">
                 Clear Task
               </button>
             </div>
-            <button class="btn btn-success pull-right" ng-click="toggle(false)">
+            <button class="btn btn-success pull-right font-size-md" ng-click="toggle(false)">
               Reveal
             </button>
           </div>
@@ -133,10 +133,10 @@
         </p>
         <div class="text-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-success" ng-click="changeCards(data.customscale)" ng-disabled="data.customscale == null">
+            <button type="button" class="btn btn-success font-size-md" ng-click="changeCards(data.customscale)" ng-disabled="data.customscale == null">
                 Submit new scale
             </button>
-            <button type="button" class="btn btn-warning" ng-click="changeCards(cards); scaleMessage = 'Default scale set'">
+            <button type="button" class="btn btn-warning font-size-md" ng-click="changeCards(cards); scaleMessage = 'Default scale set'">
                 Default scale
             </button>
           </div>
@@ -153,16 +153,18 @@
         <h3 ng-hide="data.name" class="text-center">Welcome!</h3>
         <h3 ng-show="data.name" class="text-center">Welcome, {{data.name}}!</h3>
         <form name="userForm" novalidate>
-          <div class="input-group">
-            <input type="text" class="form-control" ng-model="data.name" placeholder="Name">
-            <span class="input-group-btn">
-              <button class="btn btn-info" ng-click="addUser(data.name); userSet = true;" ng-disabled="data.name == null" ng-class="{'last-btn-in-group': (!params.leader && params.leaderChosen) }">
+          <div>
+            <input type="text" class="form-control" ng-model="data.name" placeholder="Name" aria-label="Name">
+            <div>
+              <button class="btn btn-info width-100 font-size-md" ng-click="addUser(data.name); userSet = true;" ng-disabled="data.name == null" ng-class="{'last-btn-in-group': (!params.leader && params.leaderChosen) }">
                I'm here!
               </button>
-              <button class="btn btn-success" ng-click="addUser(data.name); userSet = true; setLeader(data.name); leaderSelected = 'leader' " ng-hide="!params.leader && params.leaderChosen" ng-disabled="data.name == null">
+            </div>
+            <div>
+              <button class="btn btn-success width-100 font-size-md" ng-click="addUser(data.name); userSet = true; setLeader(data.name); leaderSelected = 'leader' " ng-hide="!params.leader && params.leaderChosen" ng-disabled="data.name == null">
                I'm the leader!
               </button>
-            </span>
+            </div>
           </div>
         </form>
       </div>
@@ -245,7 +247,7 @@
         </div>
         <div class="col-sm-5">
           <h3 class="well">
-            You've selected: {{data.card || "..."}}
+            You've selected: <span class="pull-right">{{data.card || "..."}}</span>
           </h3>
           <h3 class="well" ng-show="params.toggleStart">
             <div class="row">
@@ -253,14 +255,14 @@
                 Progress...
               </div>
               <div class="col-sm-3">
-                <div class="label pull-right">
+                <div class="white-space-nowrap pull-right">
                   {{ cardchoices.length }} Votes
                 </div>
               </div>
             </div>
           </h3>
           <h3 class="well" ng-hide="params.toggleStart">
-            Average Estimate: {{ params.cardAvg | number:2 }}
+            Average Estimate: <span class="pull-right">{{ params.cardAvg | number:2 }}</span>
           </h3>
         </div>
       </div>
