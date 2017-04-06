@@ -1,6 +1,6 @@
 # Planning Lotto
 
-This app allows a software development team to play [Planning Poker](http://en.wikipedia.org/wiki/Planning_poker)
+This app allows software development teams to play [Planning Poker](http://en.wikipedia.org/wiki/Planning_poker).
 
 
 ## Description
